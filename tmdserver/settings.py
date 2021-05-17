@@ -25,7 +25,7 @@ SECRET_KEY = "wt@&_6!@^myg(^$4a1_o(fi!#*b35*+qg&31jbuc1g^_8kfqc_"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tmd-server.herokuapp.com']
+ALLOWED_HOSTS = ['tmd-server.herokuapp.com', '127.0.0.1']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
