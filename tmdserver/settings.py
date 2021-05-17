@@ -12,9 +12,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import mimetypes
+from pathlib import Path
 mimetypes.add_type("text/css", ".css", True)
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +27,7 @@ SECRET_KEY = "wt@&_6!@^myg(^$4a1_o(fi!#*b35*+qg&31jbuc1g^_8kfqc_"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tmd-server.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['tmd-server.herokuapp.com', '.herokuapp.com', '127.0.0.1']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
