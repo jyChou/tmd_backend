@@ -114,11 +114,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
-STATIC_URL = "/static/"
 STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, "frontend"))
+STATIC_URL = "/static/"
 
 REACT_APP_DIR = os.path.join(BASE_DIR, "frontend")
+
 STATICFILES_DIRS = [
     os.path.join(REACT_APP_DIR, "build", "static"),
 ]
@@ -126,3 +126,9 @@ STATICFILES_DIRS = [
 # we whitelist localhost:3000 because that's where frontend will be served
 CORS_ORIGIN_WHITELIST = ["http://localhost:3000"]
 
+CACHES = {
+    "default": {
+         "BACKEND": "redis_cache.RedisCache",
+         "LOCATION": os.environ.get('REDIS_URL'),
+    }
+}
